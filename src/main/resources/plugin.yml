@@ -1,0 +1,15 @@
+name: ${project.name}
+version: ${project.version}
+description: ${project.description}
+main: ${plugin.mainClass}
+depend: [Vault]
+commands:
+  pvpgroupreload:
+    permission: pvpgroup.reload
+permissions:
+  pvpgroup.reload:
+    description: Allows you to reload config
+    default: op
+  pvpgroup.bypass:
+    description: Allows you to be ignored by PVPGroup as attacker
+    default: op

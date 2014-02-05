@@ -1,0 +1,5 @@
+# group: The permissions group to add a person to when they just attacked someone
+# time: The time in ticks (1/20th of a second) to keep a person in said group
+# time defaults to 100, or 5 seconds
+group: in_pvp
+time: 100
