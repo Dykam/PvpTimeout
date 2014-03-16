@@ -2,14 +2,17 @@ name: ${project.name}
 version: ${project.version}
 description: ${project.description}
 main: ${plugin.mainClass}
-depend: [Vault]
-commands:
-  pvpgroupreload:
-    permission: pvpgroup.reload
+depend: [WGCustomFlags, WorldGuard]
 permissions:
-  pvpgroup.reload:
-    description: Allows you to reload config
-    default: op
-  pvpgroup.bypass:
-    description: Allows you to be ignored by PVPGroup as attacker
-    default: op
+  pvptimeout.bypass.*:
+    description: Allows you to be ignored by PvpTimeout
+    default: false
+    children:
+      pvptimeout.bypass.attacked: true
+      pvptimeout.bypass.attacker: true
+  pvptimeout.bypass.attacked:
+    description: Allows you to be ignored by PvpTimeout when you are attacked
+    default: false
+  pvptimeout.bypass.attacker:
+    description: Allows you to be ignored by PvpTimeout when you attack
+    default: false
